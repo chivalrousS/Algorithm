@@ -4,9 +4,9 @@ public class BubbleSortTest {
       public static void bubbleSort(int[] nums)
       {
     	  int len = nums.length;
-    	  boolean flag = false;
     	  for(int i = 0;i <= len-2;++i)
     	  {
+    	        boolean flag = false;
     		  for(int j = len-1;j>i;--j)
     		  {
     			  if(nums[j-1] > nums[j])
