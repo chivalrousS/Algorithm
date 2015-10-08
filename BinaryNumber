@@ -1,0 +1,45 @@
+package nowCoder;
+
+import java.util.Scanner;
+/*
+世界上有10种人，一种懂二进制，一种不懂。那么你知道两个int32整数m和n的二进制表达，有多少个位(bit)不同么？ 
+输入例子:
+1999 2299
+
+输出例子:
+7
+*/
+public class BinaryNumber {
+	 /**
+     * 获得两个整形二进制表达位数不同的数量
+     * 
+     * @param m 整数m
+     * @param n 整数n
+     * @return 整型
+     */
+    public static int countBitDiff(int m, int n) {
+    	int count = m ^ n;
+    	return count1(count);
+    }
+
+    public static int count1(int m)
+    {
+    	int count = 0;
+    	while(m != 0)
+    	{
+    		m = m & (m-1);
+    		++count;
+    	}
+    	return count;
+    }
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner in = new Scanner(System.in);
+		int m = 0,n = 0,count = 0;
+		m = in.nextInt();
+		n = in.nextInt();
+		count = countBitDiff(m,n);
+		System.out.println(count);
+	}
+
+}
